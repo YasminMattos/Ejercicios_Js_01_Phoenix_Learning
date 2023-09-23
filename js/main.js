@@ -272,13 +272,13 @@ function esVocal(letra){
     // 🎯 Escribí una función que reciba una letra y, si es una vocal, muestre el mensaje "Es vocal".  
     // 🎯 Verificar si el usuario ingresó un string de más de un carácter y, en ese caso, informarle que no se puede procesar el dato mediante el mensaje "Dato incorrecto". 
     // Tu código:
-    switch (typeof letra === "string"){
-        case letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u':
-            return  "Es vocal"
-            break;
-        case letra.length > 0:
-            return "Dato incorrecto"
-            break;
-    } 
+    const vowels = /[aeiou]/;
+    if (typeof letra === "string" && letra.length === 1 && letra.match(vowels)){
+        return "Es vocal"
+    } else if (letra.length != 1) {
+        return "Dato incorrecto"
+    } else {
+        return "Dato incorrecto"
+    }
 }
-console.log(esVocal("dh"));
+console.log(esVocal("e"));
